@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.css";
-import Question from "./container/Question";
+import GamePage from "./container/GamePage";
 import Title from "./container/Title";
 
 function App() {
   return (
     <div className="App">
       <Title />
-      <Question />
+      <GamePage />
     </div>
   );
 }
