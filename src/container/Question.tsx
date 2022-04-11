@@ -10,7 +10,7 @@ function Question() {
         <h1>?</h1>
       </div>
       <div className="number">
-        <h1>32</h1>
+        <h1>3</h1>
       </div>
     </div>
   );
