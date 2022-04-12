@@ -1,5 +1,6 @@
 import React from "react";
 
+// 플레이어들이 부른 숫자를 계산하여 보여주는 컨테이너
 function CalculateResult() {
   return (
     <div className="calculateResult">
