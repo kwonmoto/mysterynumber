@@ -10,12 +10,19 @@ type playerNameProps = {
 
 // 플레이어 이름 출력 컨테이너
 function PlayerName({ name, playerNum }: playerNameProps) {
-  const className = playerNum === 1 ? "player1" : "player2";
+  const className = playerNum === 1 ? 1 : 3;
 
   return (
     <div
       css={css`
-        color: dodgerblue;
+        background-color: #990000;
+        height: 50px;
+        display: inline-flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        grid-row: 2;
+        grid-column: ${className};
       `}
     >
       <h4>{name}</h4>

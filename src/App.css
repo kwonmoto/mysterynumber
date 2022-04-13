@@ -46,27 +46,6 @@ div {
   background-color: #990000;
 }
 
-.player1 {
-  background-color: #990000;
-  display: inline-flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  grid-row: 2;
-  grid-column: 1/2
-}
-
-.player2 {
-  background-color: #990000;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  grid-row: 2;
-  grid-column: 3/4
-}
-
 .inputNumber {
   background-color: #990000;
   display: inline-flex;
@@ -78,44 +57,34 @@ div {
 }
 
 .calculateResult {
-  background-color: #330000;
-  display: inline-flex;
-  flex-flow: row nowrap;
-  /* flex-direction: row;
-  flex-wrap: nowrap; */
   height: 50px;
+}
+
+.c-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
   grid-row: 3;
   grid-column: 2/3
 }
 
-.calculateResult .number {
-  width: 15vw;
-  height: 50px;
+.c-box {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+}
+
+.c-number {
+  width: 100%;
   background-color: #330000;
-  position: relative;
-  display: inline-flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
 }
 
-.calculateResult .number .text {
-  text-align: center;
-}
-
-.calculateResult .mark {
-  width: 10vw;
-  height: 50px;
+.c-mark {
+  width: 50%;
   background-color: #990000;
-  position: relative;
-  display: inline-flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.calculateResult .mark .text {
-  text-align: center;
 }
 
 .scorebox {
