@@ -10,14 +10,17 @@ import rules from "../Rules";
 function GamePage() {
   const [name, setName] = useState(["Player 1", "Player 2"]);
   const [questionNumber, setQuetionNumber] = useState([0, 0]);
-  const gameQuestion = rules();
+  const [gameNum, setGameNum] = useState(0);
+  const gameQuestion = rules(gameNum);
   const gameAnswer = gameQuestion(questionNumber[0], questionNumber[1]);
 
   useEffect(() => {
     const num1 = Math.floor(Math.random() * 100);
     const num2 = Math.floor(Math.random() * 100);
     setQuetionNumber([num1, num2]);
+    setGameNum(Math.random());
   }, []);
+
   return (
     <div className="container">
       <Score playerNum={1} />
