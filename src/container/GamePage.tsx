@@ -18,7 +18,6 @@ function GamePage() {
     const num2 = Math.floor(Math.random() * 100);
     setQuetionNumber([num1, num2]);
   }, []);
-
   return (
     <div className="container">
       <Score playerNum={1} />
@@ -28,6 +27,7 @@ function GamePage() {
       <PlayerName name={name[1]} playerNum={2} />
       <InputNumber />
       <CalculateResult gameQuestion={gameQuestion} />
+      {gameAnswer}
     </div>
   );
 }
