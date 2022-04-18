@@ -13,6 +13,10 @@ function GamePage() {
   const [gameNum, setGameNum] = useState(0);
   const gameQuestion = rules(gameNum);
   const gameAnswer = gameQuestion(questionNumber[0], questionNumber[1]);
+  const [inputTable, setInputTable] = useState([
+    { num1: 1, num2: 2 },
+    { num1: 3, num2: 4 },
+  ]);
 
   useEffect(() => {
     const num1 = Math.floor(Math.random() * 100);
@@ -21,6 +25,7 @@ function GamePage() {
     setGameNum(Math.random());
   }, []);
 
+  console.log(gameQuestion);
   return (
     <div className="container">
       <Score playerNum={1} />
@@ -29,8 +34,13 @@ function GamePage() {
       <PlayerName name={name[0]} playerNum={1} />
       <PlayerName name={name[1]} playerNum={2} />
       <InputNumber />
-      <CalculateResult gameQuestion={gameQuestion} />
-      {gameAnswer}
+      <CalculateResult gameQuestion={gameQuestion} inputTable={inputTable} />
+      <CalculateResult gameQuestion={gameQuestion} inputTable={inputTable} />
+      <CalculateResult gameQuestion={gameQuestion} inputTable={inputTable} />
+      <CalculateResult gameQuestion={gameQuestion} inputTable={inputTable} />
+      <CalculateResult gameQuestion={gameQuestion} inputTable={inputTable} />
+      <CalculateResult gameQuestion={gameQuestion} inputTable={inputTable} />
+      <CalculateResult gameQuestion={gameQuestion} inputTable={inputTable} />
     </div>
   );
 }
