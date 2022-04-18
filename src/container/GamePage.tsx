@@ -8,15 +8,17 @@ import rules from "../Rules";
 
 //게임 페이지
 function GamePage() {
+  interface InputTableItem {
+    num1: number;
+    num2: number;
+  }
+
   const [name, setName] = useState(["Player 1", "Player 2"]);
   const [questionNumber, setQuetionNumber] = useState([0, 0]);
   const [gameNum, setGameNum] = useState(0);
   const gameQuestion = rules(gameNum);
   const gameAnswer = gameQuestion(questionNumber[0], questionNumber[1]);
-  const [inputTable, setInputTable] = useState([
-    { num1: 1, num2: 2 },
-    { num1: 3, num2: 4 },
-  ]);
+  const [inputTable, setInputTable] = useState<InputTableItem[]>([]);
 
   useEffect(() => {
     const num1 = Math.floor(Math.random() * 100);
@@ -25,7 +27,6 @@ function GamePage() {
     setGameNum(Math.random());
   }, []);
 
-  console.log(gameQuestion);
   return (
     <div className="container">
       <Score playerNum={1} />
@@ -33,13 +34,7 @@ function GamePage() {
       <Score playerNum={2} />
       <PlayerName name={name[0]} playerNum={1} />
       <PlayerName name={name[1]} playerNum={2} />
-      <InputNumber />
-      <CalculateResult gameQuestion={gameQuestion} inputTable={inputTable} />
-      <CalculateResult gameQuestion={gameQuestion} inputTable={inputTable} />
-      <CalculateResult gameQuestion={gameQuestion} inputTable={inputTable} />
-      <CalculateResult gameQuestion={gameQuestion} inputTable={inputTable} />
-      <CalculateResult gameQuestion={gameQuestion} inputTable={inputTable} />
-      <CalculateResult gameQuestion={gameQuestion} inputTable={inputTable} />
+      <InputNumber inputTable={inputTable} setInputTable={setInputTable} />
       <CalculateResult gameQuestion={gameQuestion} inputTable={inputTable} />
     </div>
   );

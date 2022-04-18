@@ -124,3 +124,72 @@ div {
   font-size: 2vmin;
   height: 70px;
 }
+
+.btn-input{
+  background:#990000;
+  color:#fff;
+  border:none;
+  position:relative;
+  width: 20%;
+  height: 50px;
+  font-size: 16px;
+  padding:0 1vw;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+
+.btn-input:hover{
+  background:#fff;
+  color:#990000;
+}
+
+.btn-input:active{
+  background:#eee;
+  color:#330000;
+  transition:none;
+}
+
+.btn-input:before,.btn-input:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #990000;
+  transition:400ms ease all;
+}
+
+.btn-input:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+
+.btn-input:hover:before,.btn-input:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+.btn-input:disabled{
+  background:grey;
+  color:#fff;
+  cursor: default;
+}
+
+.input-answer{
+  background:#fff;
+  color:#330000;
+  border:none;
+  position:relative;
+  width: 80%;
+  height: 50px;
+  font-size: 16px;
+  padding: 0;
+  outline:none;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+}
