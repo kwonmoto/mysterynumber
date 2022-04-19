@@ -1,8 +1,9 @@
 import React from "react";
 
 interface InputTableItem {
-  num1: number;
-  num2: number;
+  id: number;
+  num1?: number;
+  num2?: number;
 }
 interface calculateResultProps {
   gameQuestion: (a: number, b: number) => number;
@@ -13,8 +14,8 @@ interface calculateResultProps {
 function CalculateResult({ gameQuestion, inputTable }: calculateResultProps) {
   return (
     <>
-      {inputTable.map((row, i) => (
-        <div className="calculateResult c-container" key={i}>
+      {inputTable.map((row) => (
+        <div className="calculateResult c-container" key={row.id}>
           <div className="calculateResult c-box c-number">
             <h2>{row.num1}</h2>
           </div>
@@ -22,13 +23,17 @@ function CalculateResult({ gameQuestion, inputTable }: calculateResultProps) {
             <h1>?</h1>
           </div>
           <div className="calculateResult c-box c-number">
-            <h2>{row.num2}</h2>
+            <h2>{row.num2 === undefined ? "loading" : row.num2}</h2>
           </div>
           <div className="calculateResult c-box c-mark">
             <h1>=</h1>
           </div>
           <div className="calculateResult c-box c-number">
-            <h2>{gameQuestion(row.num1, row.num2)}</h2>
+            <h2>
+              {row.num1 !== undefined && row.num2 !== undefined
+                ? gameQuestion(row.num1, row.num2)
+                : "-"}
+            </h2>
           </div>
         </div>
       ))}
